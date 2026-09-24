@@ -1,0 +1,10 @@
+.env
+.call_log.jsonl
+report.md
+demo_report.md
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.venv/
+venv/
