@@ -100,29 +100,7 @@ This makes 1,000 genuine Nansen API calls across cheap endpoints only (smart-mon
 
 ## How it works
 
-```
-config/watchlist.json  ->  token, chain, contract, repo
-        |
-        v
-NansenClient (ship_or_exit/nansen.py)
-  POST /api/v1/smart-money/netflow, apikey header auth
-  persistent JSONL call log: endpoint, credits, latency, hash
-        |
-        v
-GitHubClient (ship_or_exit/github.py)
-  commit history, 112d window, paginated
-  is_human(): drops merge commits and bot accounts
-        |
-        v
-metrics.py  ->  flow acceleration (7d vs 30d rate), commit velocity
-                vs the repo's own baseline, contributor breadth, recency
-        |
-        v
-scoring.py  ->  explainable fusion into verdict + score + reasons
-        |
-        v
-report.py   ->  terminal table (for the demo recording) + markdown
-```
+![Ship-or-Exit pipeline architecture](assets/architecture.png)
 
 Repos are scored against their own history, never against each other. A mature protocol ships at a different cadence than a new launch.
 
@@ -134,7 +112,7 @@ config/watchlist.json   10-token curated watchlist with repo mappings
 demo.py                 zero-key demo (this is what the recording shows)
 run_live.py             real-data run, writes report.md
 backfill.py             1,000-call gate runner, writes .call_log.jsonl
-assets/                 screenshots and title card for this README
+assets/                 screenshots, title card, and pipeline diagram
 JUDGING.md              how this maps to the four judging criteria
 SUBMIT.md               submission checklist
 ```
