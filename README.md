@@ -36,6 +36,19 @@ The fusion is a verdict with reasons you can verify in under a minute:
 
 Commits are a proxy, not proof. The agent flags evidence; it does not issue trade orders.
 
+## Live evidence (September 23, 2026)
+
+One verified live read, produced by `run_live.py` against real Nansen and GitHub data:
+
+**AAVE: CONTRARIAN_WATCH, 60/100**
+
+- Flow: DISTRIBUTING. $506,767 in 7-day Smart Money net outflows across 9 active traders.
+- Development: SHIPPING. The mapped active repo (`aave/aave-v4`) held 0.5 commits/week against its own 0.17 baseline, with 2 contributors and the last commit 7 days earlier.
+
+Money is leaving while the mapped active v4 repository keeps shipping. That disagreement is the signal the agent exists to catch. Analytical evidence only, not trading advice.
+
+The `demo.py` path covers all six verdicts on synthetic fixtures so anyone can reproduce the full decision surface with zero keys. The live path above is where real data flows through the same code.
+
 ## Screenshots
 
 The offline demo runs the full pipeline on synthetic fixtures and prints the verdict table to the terminal:
